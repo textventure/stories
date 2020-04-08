@@ -1,0 +1,108 @@
+_config:
+  title: Conversation with the Cat
+  description: >
+    An encounter with a cat led to a strange conversation...
+  author:
+    - Lewis Carroll
+    - remarkablemark
+  start: start
+  renderer: markdown
+
+start:
+  ? Lost in the woods, you were startled by the sight of the Cheshire Cat sitting on a bough of a tree a few yards off.
+  : - Observe the cat.: observe_the_cat
+    - Ask for directions.: ask_for_directions
+    - Ignore the cat and continue walking.: walk_right
+
+observe_the_cat:
+  ? The Cat only grinned when it saw you. It look good-natured but it still had VERY long claws and a great many teeth.
+  : - Treat it with respect.: treat_with_respect
+    - Ask for directions.: ask_for_directions
+
+treat_with_respect:
+  “Cheshire Puss,” you began, rather timidly...:
+    - Check if the cat's pleased.: cat_grin
+
+cat_grin:
+  The cat grinned a little wider.:
+    - Ask for directions.: ask_for_directions
+
+ask_for_directions:
+  ? |
+    You ask the cat, “Would you tell me, please, which way I ought to go from here?”
+
+    “That depends a good deal on where you want to get to,” said the Cat.
+  : - “I don't much care where.”: i_dont_care_where
+    - “So long as I get SOMEWHERE.”: i_get_somewhere
+
+i_dont_care_where:
+  “Then it doesn't matter which way you go,” said the Cat.:
+    - Agree.: response_to_cat
+    - Deny.: response_to_cat
+
+i_get_somewhere:
+  ? |
+    “Oh, you're sure to do that,” said the Cat, “if you only walk long enough.”:
+  : - Agree.: response_to_cat
+    - Deny.: response_to_cat
+
+response_to_cat:
+  "You could not deny this point, so you tried another question:":
+    - “What sort of people live here?”: who_lives_here
+    - “Are you mad?”: are_you_mad
+
+are_you_mad:
+  ? |
+    The Cat replied, “We're all mad here. I'm mad. You're mad.”
+  : - ...: do_you_play_croquet
+    - “How do you know?”: how_do_you_know
+    - Give up and leave.: walk_right
+
+how_do_you_know:
+  ? |
+    “To begin with,” said the Cat, “let's grant that a dog's not mad.”
+
+    “A dog growls when it's angry, and wags its tail when it's pleased.”
+
+    “Now I growl when I'm pleased, and wag my tail when I'm angry. Therefore I'm mad.”
+  : - “I suppose so.”: do_you_play_croquet
+    - “I call it purring, not growling.”: do_you_play_croquet
+
+do_you_play_croquet:
+  “Anyhoo, do you play croquet with the Queen?”:
+    - “Yes.”: see_you_there
+    - “No.”: if_you_go
+    - “I wasn't invited.”: if_you_go
+
+see_you_there:
+  ? |
+    “Well then,” said the Cat, “you'll see me there.” Then the Cat vanished.
+  : - Continue walking.: walk_right
+
+if_you_go:
+  ? |
+    “Well if you go,” said the Cat, “you'll see me there.” Then the Cat vanished.
+  : - Continue walking.: walk_right
+
+who_lives_here:
+  ? |
+    “In THAT direction,” the Cat said, waving its right paw round, “lives a Hatter.”
+
+    “And in THAT direction,” waving the other paw, “lives a March Hare.”
+
+    “Visit either you like: they're both mad.”:
+  : - Take the left path.: walk_left
+    - Take the right path.: walk_right
+
+walk_left:
+  ? You have not gone much farther before you came in sight of the house of the Hatter.
+  : - End of chapter.: end
+
+walk_right:
+  ? You have not gone much farther before you came in sight of the house of the March Hare.
+  : - End of chapter.: end
+
+end:
+  ? |
+    Thanks for playing "Conversation with the Cat"! Feel free to replay the game to see what you've missed.
+  : - RESTART: start
