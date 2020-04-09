@@ -1,6 +1,8 @@
 {
   "private": true,
   "scripts": {
+    "clean": "rm -rf build",
+    "copy": "mkdir -p build; find src -type f -name '*.y*ml' -exec cp {} build/ \\;",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
