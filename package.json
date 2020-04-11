@@ -2,10 +2,12 @@
   "private": true,
   "scripts": {
     "clean": "rm -rf build",
-    "copy": "mkdir -p build; find src -type f -name '*.y*ml' -exec cp {} build/ \\;",
+    "copy": "mkdir -p build && find src -type f -name '*.y*ml' -exec cp {} build/ \\;",
+    "deploy": "npm run clean && npm run copy && gitploy build gh-pages",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "gitploy": "^0.1.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.2",
     "prettier": "^2.0.3"
