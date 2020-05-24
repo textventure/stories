@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - stable
+install:
+  - npm install
+script:
+  - npx commitlint --from=HEAD~1
+  - npm run lint
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
