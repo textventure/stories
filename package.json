@@ -5,12 +5,14 @@
     "copy": "mkdir -p build && find src -type f -name '*.y*ml' -exec cp {} build/ \\;",
     "deploy": "npm run clean && npm run copy && gitploy build gh-pages",
     "lint": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "lint:fix": "prettier --write .",
+    "start": "http-server src --cors --port 8080 -o"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "gitploy": "^0.1.0",
+    "http-server": "^0.12.3",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.2",
     "prettier": "^2.0.3"
