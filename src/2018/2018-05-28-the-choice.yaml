@@ -1,0 +1,55 @@
+_config:
+  title: The Choice
+  description: >
+    They said to “Follow the rabbit,” but that led to an encounter with a man in all black wearing sunglasses...
+  author:
+    - The Wachowskis
+    - remarkablemark
+
+start:
+  Hello, I've been expecting you.:
+    - Who you are?: introduction
+    - Remain silent.: noResponse
+
+introduction:
+  Who I am does not matter. What matters more is what we're here to do.:
+    - Go on...: choosePill
+    - Remain silent.: noResponse
+
+choosePill:
+  ? |
+    In both my hands, I hold a pill.
+
+    In my left hand, there's a red pill. Take it and you'll go down the rabbit hole.
+
+    In my right hand, there's a blue pill. Take it and you'll forget this conversation ever happened.
+  : - Take the red pill.: redPill
+    - Take the blue pill.: bluePill
+    - Remain silent.: noResponse
+
+noResponse:
+  I take it you're the silent type?:
+    - Yes.: breakSilence
+    - No.: breakSilence
+    - Remain silent.: remainSilent
+
+breakSilence:
+  Ha! It seems like I broke your silence. Let's continue...:
+    - Continue: choosePill
+
+remainSilent:
+  Two can play this game.:
+    - Remain silent.: remainSilent
+    - Let's continue.: choosePill
+
+redPill:
+  Welcome to the Matrix.:
+    - END: end
+
+bluePill:
+  Goodbye.:
+    - END: end
+
+end:
+  ? Thanks for playing “The Choice”. Feel free to replay the game to see what you've missed.
+  : - RESTART: start
