@@ -1,5 +1,5 @@
 _config:
-  title: Conversation with the Cat
+  title: Conversations with the Cat
   description: >
     An encounter with a cat led to a strange conversation...
   author:
@@ -104,5 +104,5 @@ walk_right:
 
 end:
   ? |
-    Thanks for playing "Conversation with the Cat"! Feel free to replay the game to see what you've missed.
+    Thanks for playing “Conversations with the Cat”! Feel free to replay the game to see what you've missed.
   : - RESTART: start
