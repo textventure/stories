@@ -1,9 +1,10 @@
 {
   "private": true,
   "scripts": {
+    "build": "npm run clean && npm run copy",
     "clean": "rm -rf build",
     "copy": "mkdir -p build && find src -type f -name '*.y*ml' -exec cp {} build/ \\;",
-    "deploy": "npm run clean && npm run copy && gitploy build gh-pages",
+    "deploy": "npm run build && gitploy build gh-pages",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
     "start": "http-server src --cors --port 8080 -o"
