@@ -1,0 +1,40 @@
+_config:
+  title: The Monty Hall Problem
+  description: >
+    A brain teaser and probability puzzle loosely based on a famous television game show.
+  author:
+    - Steve Selvin
+    - remarkablemark
+
+start:
+  Welcome to the game show. Are you ready to play the Monty Hall problem?:
+    - Yes, let's play!: play
+
+play:
+  ? Excellent! In front of you are three doors. Behind one door is a car and behind the other two doors are goats. Which door do you wish to open?
+  : - Door 1.: door1
+    - Door 2.: door2
+    - Door 3.: door3
+
+door1:
+  ? Before we open door 1, we can eliminate door 3, which has a goat behind it. Would you like to stay or switch?
+  : - Stay with door 1.: goat
+    - Switch to door 2.: car
+
+door2:
+  ? Before we open door 2, we can eliminate door 3, which has a goat behind it. Would you like to stay or switch?
+  : - Stay with door 2.: car
+    - Switch to door 1.: goat
+
+door3:
+  ? Before we open door 3, we can eliminate door 1, which has a goat behind it. Would you like to stay or switch?
+  : - Stay with door 3.: goat
+    - Switch to door 2.: car
+
+goat:
+  Sorry, you have opened a goat. Better luck next time!:
+    - Play again.: start
+
+car:
+  Congratulations, you have opened a car!:
+    - Play again.: start
