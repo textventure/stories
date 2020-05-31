@@ -85,4 +85,4 @@ To test a story, you have 2 options:
    ```
 4. Search through the directory listing to find your story and copy the URL.
 5. Load the URL in [textventure/play](https://textventure.github.io/play/).
-6. Reload the page after an edit.
+6. Hard reload the page after an edit.
